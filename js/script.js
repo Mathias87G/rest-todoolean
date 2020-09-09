@@ -18,6 +18,15 @@ $(document).ready(function(){
   $('.inserisci').click(function(){
     var newElement = $('#nuova-voce').val();
     createElement(newElement);
+    $('#nuova-voce').val("");
+  });
+
+  $(document).on('keydown', '#nuova-voce', function(){
+    if (event.which == 13 || event.keyCode == 13){
+      var newElement = $('#nuova-voce').val();
+      createElement(newElement);
+      $('#nuova-voce').val("");
+    }
   });
 
   $(document).on('keydown', '.edit', keyboard)
@@ -113,5 +122,4 @@ function editData(id){
       }
     }
   );
-    console.log(edit);
 }
