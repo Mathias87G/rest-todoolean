@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   $(document).on('click', '.list', function(){
     var oggetto = $(this);
-    var elemento = $(this).text();
+    var elemento = $(this).find('.text').text();
     $('input.edit').addClass('hidden');
     $(this).children('input').removeClass('hidden').val(elemento);
   });
@@ -20,7 +20,7 @@ $(document).ready(function(){
     createElement(newElement);
   });
 
-  $('.edit').keydown(keyboard);
+  $(document).on('keydown', '.edit', keyboard)
 });
 
 function createElement(elemento){
@@ -96,8 +96,7 @@ function keyboard(){
 }
 
 function editData(id){
-  var edit = $('.item[data-id="' + id + '"]').find('input').val();
-
+  var edit = $('.list[data-id="' + id + '"]').find('.edit').val();
   $.ajax(
     {
       url: 'http://157.230.17.132:3013/todos/' + id,
@@ -114,4 +113,5 @@ function editData(id){
       }
     }
   );
+    console.log(edit);
 }
