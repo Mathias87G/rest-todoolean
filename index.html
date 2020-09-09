@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js" integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+  </head>
+  <body>
+
+    <input type="text" id="nuova-voce" placeholder="Inserisci una nuova voce">
+    <button class="inserisci">Inserisci</button>
+
+    <ol class="todos"></ol>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      <div class="entry">
+        <li class="list" data-id={{id}}>{{text}}
+          <input class="edit hidden" type="text" value="">
+          <span class="delete">X</span>
+        </li>
+
+      </div>
+    </script>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
